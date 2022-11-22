@@ -15,8 +15,8 @@ export class CrearComponent implements OnInit {
   id_resultado: string = "";
   intentoEnvio: boolean = false;
   elResultado: Resultado = {
-    numero_mesa: "",
-    cedula_candidato: "",
+    mesa: null,
+    candidato: null,
     numero_votos: ""
   }
 
@@ -41,10 +41,10 @@ export class CrearComponent implements OnInit {
       });
   }
 
-  agregar(): void {
+  agregar(idMesa:string, idCandidato:string): void {
     if (this.validarDatosCompletos()) {
       this.intentoEnvio = true;
-      this.miServicioResultados.crear(this.elResultado).
+      this.miServicioResultados.crear(idMesa,idCandidato,this.elResultado).
         subscribe(data => {
           Swal.fire(
             'Creado',
@@ -73,8 +73,7 @@ export class CrearComponent implements OnInit {
 
   validarDatosCompletos(): boolean {
     this.intentoEnvio = true;
-    if (this.elResultado.numero_mesa == "" ||
-      this.elResultado.cedula_candidato == "" ||
+    if (
       this.elResultado.numero_votos == "") {
       return false;
     } else {

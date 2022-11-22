@@ -20,8 +20,8 @@ export class ResultadoService {
   getResultado(id: string): Observable<Resultado> {
     return this.http.get<Resultado>(`${environment.url_gateway}/resultado/${id}`);
   }
-  crear(elResultado: Resultado) {
-    return this.http.post(`${environment.url_gateway}/resultado`,elResultado);   
+  crear(idMesa:string, idCandidato:string, elResultado: Resultado) {
+    return this.http.post(`${environment.url_gateway}/resultado/mesa/${idMesa}/candidato/${idCandidato}`,elResultado);   
   }
   editar(id: string, elResultado: Resultado) {
     return this.http.put(`${environment.url_gateway}/resutlado/${id}`,elResultado);  

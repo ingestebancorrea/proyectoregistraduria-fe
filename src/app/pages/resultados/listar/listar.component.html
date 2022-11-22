@@ -12,8 +12,8 @@
         </tr>
         <ng-container *ngFor="let resultadoActual of resultados">
           <tr>
-            <td>{{ resultadoActual.numero_mesa }}</td>
-            <td>{{ resultadoActual.cedula_candidato }}</td>
+            <td>{{ resultadoActual.mesa.numero }}</td>
+            <td>{{ resultadoActual.candidato.nombre }} {{ resultadoActual.candidato.apellido }}</td>
             <td>{{ resultadoActual.numero_votos }}</td>
             <td>
               <button

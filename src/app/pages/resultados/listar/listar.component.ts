@@ -12,7 +12,7 @@ import { ResultadoService } from '../../../servicios/resultado.service';
 export class ListarComponent implements OnInit {
 
   resultados: Resultado[];
-  nombresColumnas: string[] = ['Numero Mesa','Cedula Candidato', 'Número Votos'];
+  nombresColumnas: string[] = ['Mesa','Candidato', 'Número Votos'];
   constructor(private miServicioResultados: ResultadoService, private router: Router) { }
 
   ngOnInit(): void {

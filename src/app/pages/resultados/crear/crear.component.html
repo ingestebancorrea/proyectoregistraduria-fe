@@ -9,22 +9,21 @@
         <nb-card-body>
             <div class="row">
                 <div class="col-3">
-                    <label>Numero Mesa</label>
+                    <label>Mesa</label>
                 </div>
                 <div class="col-9">
-                    <input class="form-control" type="text" [disabled]="!modoCreacion"
-                        [(ngModel)]="elResultado.numero_mesa">
-                    <p *ngIf="intentoEnvio && elResultado.numero_mesa==''">Requerido</p>
+                    <input class="form-control" type="text" [(ngModel)]="elResultado.mesa.numero">
+                    <p *ngIf="intentoEnvio && elResultado.mesa=='' ">Requerido</p>
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-3">
-                    <label>Cedula Candidato</label>
+                    <label>Candidato</label>
                 </div>
                 <div class="col-9">
-                    <input class="form-control" type="text" [(ngModel)]="elResultado.cedula_candidato">
-                    <p *ngIf="intentoEnvio && elResultado.cedula_candidato=='' ">Requerido</p>
+                    <input class="form-control" type="text" [(ngModel)]="elResultado.candidato.nombre">
+                    <p *ngIf="intentoEnvio && elResultado.candidato=='' ">Requerido</p>
                 </div>
             </div>
             <br>

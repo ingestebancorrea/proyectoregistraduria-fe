@@ -1,6 +1,9 @@
+import { Candidato } from "./candidato.model";
+import { Mesa } from "./mesa.model";
+
 export class Resultado {
     _id?:string;
-    numero_mesa?:string;
-    cedula_candidato?:string;
+    mesa?:Mesa;
+    candidato?:Candidato;
     numero_votos?:string;
 }
