@@ -11,6 +11,31 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'home',
+      loadChildren: () => import('./home/home.module')
+      .then(m => m.HomeModule),
+    },
+    {
+      path: 'seguridad',
+      loadChildren: () => import('./seguridad/seguridad.module')
+      .then(m => m.SeguridadModule),
+    },
+    {
+      path: 'candidatos',
+      loadChildren: () => import('./candidatos/candidatos.module')
+      .then(m => m.CandidatosModule),
+    },
+    {
+      path: 'mesa',
+      loadChildren: () => import('./mesa/mesa.module')
+      .then(m => m.MesaModule),
+    },
+    {
+      path: 'resultados',
+      loadChildren: () => import('./resultados/resultados.module')
+      .then(m => m.ResultadosModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
